@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Prime 01/10 Alzheimer</title>
+<link rel="stylesheet" href="fonts.css">
+<style>
+:root{
+  --ink:#0D0905; --esp:#22170C; --esp2:#33240F;
+  --gold:#B8924A; --gold-l:#D8B573; --gold-d:#8E6B2E;
+  --cream:#F5EDE0; --cream2:#ECDCC2; --white:#FFFFFF;
+  --brown:#2E2012; --muted:#8A7B69; --sky:#9AD8F0;
+  --f:'Montserrat',system-ui,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#555;font-family:var(--f);display:flex;flex-direction:column;gap:40px;padding:40px;align-items:flex-start}
+.frame{position:relative;overflow:hidden;flex-shrink:0;font-family:var(--f);-webkit-font-smoothing:antialiased}
+.feed{width:1080px;height:1350px}
+.li{width:1080px;height:580px}
+.story{width:1080px;height:1920px}
+.abs{position:absolute}
+canvas.dots{position:absolute;display:block}
+.eyebrow{font-size:22px;font-weight:600;letter-spacing:.18em;text-transform:uppercase}
+.eyebrow::after{content:"";display:block;width:64px;height:3px;background:var(--gold);margin-top:22px}
+.topbar{position:absolute;left:0;right:0;top:0;height:18px;background:linear-gradient(90deg,var(--gold-d),var(--gold) 40%,var(--gold-l) 70%,var(--gold))}
+.dark{background:radial-gradient(120% 90% at 85% 10%,#3A2812 0%,var(--esp) 38%,var(--ink) 78%)}
+.cross{position:absolute;fill:none;stroke-width:2}
+.handle{font-size:22px;letter-spacing:.14em;color:var(--gold-d);font-weight:500}
+.icons{display:flex;gap:30px;justify-content:center}
+.icons svg{width:38px;height:38px;fill:none;stroke:var(--gold);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.brandmini{display:flex;align-items:center;gap:22px}
+.brandmini img{height:96px}
+.brandmini .t1{font-size:21px;letter-spacing:.08em;color:var(--cream);font-weight:400;line-height:1.25}
+.brandmini .t2{font-size:30px;letter-spacing:.08em;color:var(--cream);font-weight:500;margin-top:6px}
+.hl-sky{background:var(--sky);color:var(--brown);padding:0 8px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.hl-gold{background:linear-gradient(transparent 58%,rgba(216,181,115,.55) 58%);padding:0 4px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.foot-tag{font-size:19px;letter-spacing:.2em;text-transform:uppercase;font-weight:500}
+.foot-tag::after{content:"";display:block;width:64px;height:3px;background:var(--gold);margin-top:18px}
+</style>
+</head>
+<body>
+
+<!-- ============ FEED 1 · CAPA ============ -->
+<section class="frame feed dark" id="feed-1">
+  <canvas class="dots" data-mode="field" data-tone="gold" width="1080" height="600" style="left:0;top:230px;width:1080px;height:600px;opacity:.95;-webkit-mask-image:linear-gradient(180deg,transparent 0%,#000 22%,#000 70%,transparent 100%);mask-image:linear-gradient(180deg,transparent 0%,#000 22%,#000 70%,transparent 100%);"></canvas>
+  
+  <svg class="cross" style="left:690px;top:-120px;width:520px;height:520px;stroke:rgba(216,181,115,.22)" viewBox="0 0 100 100"><path d="M36 6h28a4 4 0 0 1 4 4v22a4 4 0 0 0 4 4h18a4 4 0 0 1 4 4v20a4 4 0 0 1-4 4H72a4 4 0 0 0-4 4v22a4 4 0 0 1-4 4H36a4 4 0 0 1-4-4V68a4 4 0 0 0-4-4H10a4 4 0 0 1-4-4V40a4 4 0 0 1 4-4h18a4 4 0 0 0 4-4V10a4 4 0 0 1 4-4z" vector-effect="non-scaling-stroke"/></svg>
+
+  <div class="abs eyebrow" style="left:72px;top:64px;color:var(--cream)">Alzheimer</div>
+  <div class="abs" style="right:72px;top:56px"><div class="brandmini"><img src="assets/logo_ondark.png" alt=""><div><div class="t1">Prime<br>Soluções em Saúde.</div><div class="t2">22 anos</div></div></div></div>
+
+  <div class="abs" style="left:0;right:0;top:300px;display:flex;justify-content:space-between;padding:0 92px">
+    <span style="font-size:20px;letter-spacing:.3em;color:var(--gold-l);font-weight:600">FASE 01</span>
+    <span style="font-size:20px;letter-spacing:.3em;color:rgba(216,181,115,.45);font-weight:600">FASE 04</span>
+  </div>
+
+  <div class="abs" style="left:0;right:0;top:800px;text-align:center">
+    <div style="font-size:44px;font-weight:300;letter-spacing:.32em;color:rgba(245,237,224,.78)">Alzheimer:</div>
+    <div style="font-size:50px;font-weight:600;letter-spacing:.14em;color:var(--gold);margin-top:22px">O IMPACTO DAS</div>
+    <div style="font-size:112px;font-weight:800;letter-spacing:.01em;color:var(--white);line-height:1;margin-top:12px;white-space:nowrap">QUATRO FASES</div>
+    <div style="font-size:44px;font-weight:300;letter-spacing:.32em;color:rgba(245,237,224,.78);margin-top:26px">no cuidado.</div>
+  </div>
+
+  <div class="abs" style="left:0;right:0;bottom:56px;text-align:center">
+    <div class="icons">
+      <svg viewBox="0 0 24 24"><path d="M6 3h12v18l-6-4-6 4z"/></svg>
+      <svg viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9h8M8 12h5"/></svg>
+      <svg viewBox="0 0 24 24"><path d="M21 3 10 14"/><path d="M21 3 14 21l-4-7-7-4z"/></svg>
+    </div>
+    <div class="handle" style="margin-top:18px">@prime.solucoesemsaude</div>
+  </div>
+</section>
+
+<!-- ============ FEED 2 · PROGRESSÃO ============ -->
+<section class="frame feed" id="feed-2" style="background:linear-gradient(180deg,var(--white) 0%,var(--cream) 62%,var(--cream2) 100%)">
+  <div class="topbar"></div>
+  <div class="abs" style="left:96px;right:96px;top:150px">
+    <div style="font-size:60px;line-height:1.18;font-weight:500;color:var(--brown);letter-spacing:-.01em;text-wrap:balance">
+      A condição progride afetando primeiro as <span style="color:var(--gold);font-weight:600">memórias recentes</span> e a <span style="color:var(--gold);font-weight:600">autonomia diária.</span>
+    </div>
+  </div>
+
+  <!-- 4-phase track -->
+  <div class="abs" style="left:96px;right:96px;top:530px">
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:22px">
+      <div class="phase"><canvas class="dots" data-mode="tile" data-level="0" data-tone="brown" width="200" height="200" style="position:relative;width:200px;height:200px"></canvas></div>
+      <div class="phase"><canvas class="dots" data-mode="tile" data-level="1" data-tone="brown" width="200" height="200" style="position:relative;width:200px;height:200px"></canvas></div>
+      <div class="phase"><canvas class="dots" data-mode="tile" data-level="2" data-tone="brown" width="200" height="200" style="position:relative;width:200px;height:200px"></canvas></div>
+      <div class="phase"><canvas class="dots" data-mode="tile" data-level="3" data-tone="brown" width="200" height="200" style="position:relative;width:200px;height:200px"></canvas></div>
+    </div>
+    <div style="height:4px;margin-top:30px;border-radius:2px;background:linear-gradient(90deg,var(--gold) 0%,var(--gold-l) 45%,rgba(184,146,74,.15) 100%)"></div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:20px;font-size:22px;letter-spacing:.2em;font-weight:600;color:var(--gold-d)">
+      <span>01</span><span style="opacity:.8">02</span><span style="opacity:.6">03</span><span style="opacity:.42">04</span>
+    </div>
+    <div style="display:flex;justify-content:space-between;margin-top:8px;font-size:20px;color:var(--muted);font-weight:400;letter-spacing:.04em">
+      <span>autonomia preservada</span><span>dependência</span>
+    </div>
+  </div>
+
+  <div class="abs" style="left:72px;right:72px;bottom:72px;background:var(--white);border-radius:48px;padding:56px 64px;box-shadow:0 30px 60px -30px rgba(46,32,18,.25)">
+    <div style="font-size:36px;line-height:1.45;color:var(--muted);font-weight:400">
+      Compreender a transição entre os estágios permite organizar a rotina familiar <span style="color:var(--brown);font-weight:600">antes</span> que a adaptação da casa aconteça <span style="color:var(--brown);font-weight:600">sob urgência.</span>
+    </div>
+    <div style="width:64px;height:3px;background:var(--gold);margin-top:32px"></div>
+  </div>
+</section>
+
+<!-- ============ FEED 3 · ESTÁGIOS INICIAIS ============ -->
+<section class="frame feed" id="feed-3" style="background:var(--white)">
+  <div class="topbar"></div>
+  <canvas class="dots" data-mode="corner" data-level="1" data-tone="brown" width="520" height="520" style="right:-60px;top:40px;width:520px;height:520px;opacity:.55"></canvas>
+  <div class="abs eyebrow" style="left:96px;top:110px;color:var(--gold-d);font-size:20px">Fases iniciais</div>
+  <div class="abs" style="left:96px;right:300px;top:210px;font-size:66px;line-height:1.12;font-weight:700;color:var(--brown);letter-spacing:-.01em">
+    Nos estágios<br><span style="color:var(--gold)">iniciais,</span> ocorrem:
+  </div>
+
+  <div class="abs" style="left:96px;right:96px;top:440px;display:flex;flex-direction:column;gap:0">
+    <div class="row3"><span class="n">a</span><span>Falhas espaciais</span></div>
+    <div class="row3"><span class="n">b</span><span>Declínio na fluidez da comunicação</span></div>
+    <div class="row3"><span class="n">c</span><span>Insônia ou agitação repentina</span></div>
+  </div>
+  <style>
+    .row3{display:flex;align-items:center;gap:34px;padding:30px 0;border-bottom:1.5px solid rgba(184,146,74,.35);font-size:36px;font-weight:400;color:var(--brown);letter-spacing:.01em}
+    .row3 .n{flex:none;width:62px;height:62px;border-radius:18px;background:var(--gold);color:var(--white);display:grid;place-items:center;font-size:26px;font-weight:700;text-transform:uppercase}
+  </style>
+
+  <div class="abs" style="left:0;right:0;bottom:0;height:430px;background:linear-gradient(160deg,var(--esp2) 0%,var(--esp) 45%,var(--ink) 100%);border-radius:64px 64px 0 0;padding:76px 96px 0">
+    <div style="font-size:21px;letter-spacing:.2em;color:var(--gold-l);font-weight:600;text-transform:uppercase">Primeiros passos</div>
+    <div style="font-size:42px;line-height:1.42;color:rgba(245,237,224,.82);font-weight:400;margin-top:26px">
+      Simplificar as escolhas e criar <span class="hl-sky" style="font-weight:600">lembretes visuais</span> formam os primeiros passos para <span style="color:var(--white);font-weight:600">preservar a independência.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FEED 4 · FASES AGUDAS ============ -->
+<section class="frame feed dark" id="feed-4">
+  <div class="abs" style="left:0;right:0;top:0;height:520px;background:url(assets/bed_strip.jpg) center/cover;filter:saturate(.7) brightness(.6);-webkit-mask-image:linear-gradient(180deg,#000 55%,transparent 100%);mask-image:linear-gradient(180deg,#000 55%,transparent 100%)"></div>
+  <div class="abs" style="left:0;right:0;top:0;height:520px;background:linear-gradient(180deg,rgba(13,9,5,.35) 0%,rgba(13,9,5,.45) 60%,transparent 100%)"></div>
+  <div class="abs eyebrow" style="left:96px;top:96px;color:var(--cream);font-size:20px">Fases avançadas</div>
+
+  <div class="abs" style="left:96px;right:96px;top:300px;font-size:64px;line-height:1.14;font-weight:300;color:var(--cream)">
+    O avanço para as <span style="font-weight:700;color:var(--gold-l)">fases agudas</span> traz:
+  </div>
+
+  <div class="abs" style="left:96px;right:96px;top:500px">
+    <div class="row4"><span class="bar" style="--w:40%"></span><span>Resistência a atividades básicas</span></div>
+    <div class="row4"><span class="bar" style="--w:68%"></span><span>Deficiência motora progressiva</span></div>
+    <div class="row4"><span class="bar" style="--w:100%"></span><span>Restrição ao leito</span></div>
+  </div>
+  <style>
+    .row4{display:grid;grid-template-columns:120px 1fr;align-items:center;gap:34px;padding:28px 0;border-bottom:1px solid rgba(216,181,115,.22);font-size:36px;color:var(--cream);font-weight:400}
+    .row4 .bar{height:10px;border-radius:5px;background:rgba(216,181,115,.18);position:relative;overflow:hidden}
+    .row4 .bar::after{content:"";position:absolute;inset:0;width:var(--w);background:linear-gradient(90deg,var(--gold-d),var(--gold-l));border-radius:5px}
+  </style>
+
+  <div class="abs" style="left:72px;right:72px;bottom:80px;background:var(--white);border-radius:48px;padding:58px 64px 54px">
+    <div style="font-size:35px;line-height:1.48;color:var(--muted);font-weight:400">
+      O suporte contínuo atua diretamente para <span style="color:var(--brown);font-weight:600">evitar intercorrências infecciosas</span> e proteger a integridade física e o conforto <span style="color:var(--brown);font-weight:600">do seu pai ou da sua mãe.</span>
+    </div>
+    <div style="width:64px;height:3px;background:var(--gold);margin-top:30px"></div>
+  </div>
+</section>
+
+<!-- ============ FEED 5 · FECHAMENTO ============ -->
+<section class="frame feed" id="feed-5" style="background:var(--white)">
+  <div class="topbar" style="background:linear-gradient(90deg,var(--gold-d),var(--gold) 50%,var(--ink))"></div>
+  <div class="abs" style="left:0;right:0;top:18px;height:880px;background:linear-gradient(180deg,#FBF8F3 0%,var(--cream) 55%,var(--cream2) 100%)"></div>
+  <canvas class="dots" data-mode="corner" data-level="0" data-tone="gold" width="420" height="420" style="right:-40px;top:60px;width:420px;height:420px;opacity:.45"></canvas>
+
+  <div class="abs" style="left:110px;right:110px;top:150px;font-size:52px;line-height:1.26;font-weight:500;color:var(--gold);letter-spacing:-.005em">
+    Reorganizar o ambiente doméstico com previsibilidade retira o peso de conciliar a vida pessoal com a <span class="hl-gold" style="color:var(--brown);font-weight:700">sobrecarga de cuidar sozinho.</span>
+  </div>
+  <div class="abs" style="left:110px;right:140px;top:620px;font-size:34px;line-height:1.45;color:var(--muted);font-weight:400">
+    A estrutura profissional correta devolve a segurança e <span style="color:var(--brown);font-weight:600">sustenta a relação familiar.</span>
+  </div>
+
+  <div class="abs" style="left:86px;top:830px;width:372px;height:372px;background:var(--white);border-radius:72px;box-shadow:0 40px 80px -30px rgba(184,146,74,.45);display:grid;place-items:center">
+    <img src="assets/logo_color.png" alt="" style="width:250px">
+  </div>
+  <div class="abs" style="left:520px;top:1040px">
+    <div style="font-size:26px;letter-spacing:.12em;color:#1B2B52;font-weight:700">Saiba mais em</div>
+    <div style="font-size:25px;letter-spacing:.1em;color:var(--brown);font-weight:400;margin-top:16px">primesolucoesemsaude.com.br</div>
+  </div>
+</section>
+
+<!-- ============ LINKEDIN · CAPA ARTIGO ============ -->
+<section class="frame li dark" id="li-cover">
+  <svg class="cross" style="left:250px;top:-250px;width:420px;height:420px;stroke:rgba(216,181,115,.2)" viewBox="0 0 100 100"><path d="M36 6h28a4 4 0 0 1 4 4v22a4 4 0 0 0 4 4h18a4 4 0 0 1 4 4v20a4 4 0 0 1-4 4H72a4 4 0 0 0-4 4v22a4 4 0 0 1-4 4H36a4 4 0 0 1-4-4V68a4 4 0 0 0-4-4H10a4 4 0 0 1-4-4V40a4 4 0 0 1 4-4h18a4 4 0 0 0 4-4V10a4 4 0 0 1 4-4z" vector-effect="non-scaling-stroke"/></svg>
+  <div class="abs eyebrow" style="left:56px;top:46px;color:var(--cream);font-size:16px">Alzheimer</div>
+  <div class="abs" style="left:56px;top:150px;width:560px">
+    <div style="font-size:60px;line-height:1.06;font-weight:700;color:var(--white);letter-spacing:-.01em">Estágios do<br>Alzheimer</div>
+    <div style="font-size:30px;font-weight:300;color:var(--gold-l);margin-top:22px;letter-spacing:.02em">e a rotina familiar</div>
+  </div>
+  <div class="abs" style="left:56px;bottom:46px"><div class="brandmini"><img src="assets/logo_ondark.png" alt="" style="height:66px"><div><div class="t1" style="font-size:14px">Prime Soluções em Saúde.</div><div class="t2" style="font-size:22px;margin-top:4px">22 anos</div></div></div></div>
+
+  <div class="abs" style="left:620px;top:36px;right:36px;bottom:36px;display:grid;grid-template-columns:repeat(4,1fr);gap:12px">
+    <div class="lipanel"><canvas class="dots" data-mode="tile" data-level="0" data-tone="gold" width="97" height="440" style="position:relative;width:97px;height:440px"></canvas><b>01</b></div>
+    <div class="lipanel"><canvas class="dots" data-mode="tile" data-level="1" data-tone="gold" width="97" height="440" style="position:relative;width:97px;height:440px"></canvas><b>02</b></div>
+    <div class="lipanel"><canvas class="dots" data-mode="tile" data-level="2" data-tone="gold" width="97" height="440" style="position:relative;width:97px;height:440px"></canvas><b>03</b></div>
+    <div class="lipanel"><canvas class="dots" data-mode="tile" data-level="3" data-tone="gold" width="97" height="440" style="position:relative;width:97px;height:440px"></canvas><b>04</b></div>
+  </div>
+  <style>
+    .lipanel{position:relative;border-radius:28px;overflow:hidden;background:linear-gradient(180deg,rgba(216,181,115,.10),rgba(216,181,115,.02));border:1px solid rgba(216,181,115,.18)}
+    .lipanel b{position:absolute;left:0;right:0;bottom:0;padding:40px 0 22px;background:linear-gradient(180deg,transparent,rgba(13,9,5,.92) 60%);text-align:center;font-size:16px;letter-spacing:.3em;color:var(--gold-l);font-weight:600}
+  </style>
+</section>
+
+<!-- ============ STORIES ============ -->
+<section class="frame story dark" id="story">
+  <canvas class="dots" data-mode="field" data-tone="gold" width="1080" height="700" style="left:0;top:1000px;width:1080px;height:700px;opacity:.9;-webkit-mask-image:linear-gradient(180deg,transparent 0%,#000 22%,#000 70%,transparent 100%);mask-image:linear-gradient(180deg,transparent 0%,#000 22%,#000 70%,transparent 100%);"></canvas>
+  
+  <svg class="cross" style="left:620px;top:120px;width:560px;height:560px;stroke:rgba(216,181,115,.18)" viewBox="0 0 100 100"><path d="M36 6h28a4 4 0 0 1 4 4v22a4 4 0 0 0 4 4h18a4 4 0 0 1 4 4v20a4 4 0 0 1-4 4H72a4 4 0 0 0-4 4v22a4 4 0 0 1-4 4H36a4 4 0 0 1-4-4V68a4 4 0 0 0-4-4H10a4 4 0 0 1-4-4V40a4 4 0 0 1 4-4h18a4 4 0 0 0 4-4V10a4 4 0 0 1 4-4z" vector-effect="non-scaling-stroke"/></svg>
+
+  <div class="abs eyebrow" style="left:96px;top:270px;color:var(--cream)">Alzheimer</div>
+  <div class="abs" style="left:96px;right:96px;top:400px">
+    <div style="font-size:96px;line-height:1.02;font-weight:800;color:var(--white);letter-spacing:-.01em">Quatro<br>fases de<br><span style="color:var(--gold)">mudança</span><br>na rotina:</div>
+    <div style="font-size:44px;line-height:1.4;font-weight:300;color:rgba(245,237,224,.82);margin-top:48px">o que antecipar para proteger o ambiente e a família frente ao diagnóstico de Alzheimer.</div>
+  </div>
+  <div class="abs" style="left:0;right:0;top:1050px;display:flex;justify-content:space-between;padding:0 110px;font-size:22px;letter-spacing:.3em;font-weight:600">
+    <span style="color:var(--gold-l)">01</span><span style="color:rgba(216,181,115,.75)">02</span><span style="color:rgba(216,181,115,.55)">03</span><span style="color:rgba(216,181,115,.38)">04</span>
+  </div>
+  <div class="abs" style="left:0;right:0;top:1700px;display:flex;justify-content:center">
+    <div class="brandmini"><img src="assets/logo_ondark.png" alt="" style="height:84px"><div><div class="t1" style="font-size:19px">Prime Soluções em Saúde.</div><div class="t2" style="font-size:27px">22 anos</div></div></div>
+  </div>
+</section>
+
+<script>
+function rng(seed){return function(){seed|=0;seed=seed+0x6D2B79F5|0;let t=Math.imul(seed^seed>>>15,1|seed);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
+const TONES={gold:[216,181,115],brown:[142,107,46]};
+function dot(ctx,x,y,r,c,a){ctx.beginPath();ctx.arc(x,y,r,0,Math.PI*2);ctx.fillStyle=`rgba(${c[0]},${c[1]},${c[2]},${a})`;ctx.fill()}
+// level 0..3 : presence, alpha and order decay as memory fades
+function drawCell(ctx,x0,y0,w,h,level,c,R,step){
+  const keep=[1,.72,.42,.18][level], scat=[0,step*.18,step*.45,step*.9][level], al=[.95,.7,.48,.3][level];
+  for(let y=y0+step/2;y<y0+h;y+=step)for(let x=x0+step/2;x<x0+w;x+=step){
+    if(R()>keep)continue;
+    const dx=(R()-.5)*2*scat,dy=(R()-.5)*2*scat;
+    dot(ctx,x+dx,y+dy,step*.17*(1-level*.12),c,al*(.75+R()*.25));
+  }
+}
+document.querySelectorAll('canvas.dots').forEach((cv,i)=>{
+  const ctx=cv.getContext('2d'),W=cv.width,H=cv.height,R=rng(97+i*13),c=TONES[cv.dataset.tone||'gold'],mode=cv.dataset.mode;
+  if(mode==='tile'){const l=+cv.dataset.level;drawCell(ctx,0,0,W,H,l,c,R,W<120?W/5:W/9)}
+  else if(mode==='field'){
+    const step=30;
+    for(let y=step/2;y<H;y+=step)for(let x=step/2;x<W;x+=step){
+      const t=x/W, keep=1-.85*Math.pow(t,1.1), scat=step*1.1*Math.pow(t,1.6), al=.95-.7*t;
+      if(R()>keep)continue;
+      dot(ctx,x+(R()-.5)*2*scat,y+(R()-.5)*2*scat,4.4*(1-.45*t),c,al*(.7+R()*.3));
+    }
+  } else if(mode==='corner'){
+    const step=W/12;
+    for(let y=step/2;y<H;y+=step)for(let x=step/2;x<W;x+=step){
+      const d=Math.hypot(x-W,y)/W, keep=Math.max(0,1-d*1.1), scat=step*.6*d;
+      if(R()>keep)continue;
+      dot(ctx,x+(R()-.5)*2*scat,y+(R()-.5)*2*scat,step*.15,c,(.9-d*.6));
+    }
+  }
+});
+</script>
+</body>
+</html>
